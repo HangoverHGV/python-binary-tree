@@ -8,6 +8,7 @@ class BinaryTreeNode:
         self.sibling = None
         self.level = level
         self.parent = None
+        self.children = []
 
     def add_left(self, node, force=False):
         if not force:
@@ -16,6 +17,8 @@ class BinaryTreeNode:
         self.left = node
         node.level = self.level + 1
         node.parent = self
+        if node not in self.children:
+            self.children.append(node)
 
     def add_right(self, node, force=False):
         if not force:
@@ -24,6 +27,8 @@ class BinaryTreeNode:
         self.right = node
         node.level = self.level + 1
         node.parent = self
+        if node not in self.children:
+            self.children.append(node)
 
     def __str__(self):
         return str(self.value)
