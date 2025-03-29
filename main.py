@@ -23,6 +23,7 @@ if __name__ == '__main__':
     bt.insert(node2)
 
     print(bt)
+    print(bt.in_order_dfs())
     bt.draw()
 
 

@@ -85,6 +85,21 @@ class BinaryTree:
             current = current.right
         return current
 
+    def in_order_dfs(self):
+        """
+        Perform an in-order depth-first traversal of the binary tree.
+        :return: A list of nodes in in-order.
+        """
+
+        def _in_order_dfs(node):
+            if node is None:
+                return []
+            return _in_order_dfs(node.left) + [node] + _in_order_dfs(node.right)
+
+        return _in_order_dfs(self.root_node)
+
+
+
     def _pretty_print(self):
         if not self.root_node:
             return "<empty tree>"
