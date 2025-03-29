@@ -1,4 +1,8 @@
 class BinaryTreeNode:
+    """
+    A class representing a node in a binary tree.
+    Each node has a value, left and right children, a parent, and a level.
+    """
     def __init__(self, value, level=0):
         self.value = value
         self.left = None
@@ -8,7 +12,13 @@ class BinaryTreeNode:
         self.parent = None
         self.children = []
 
-    def add_left(self, node, force=False):
+    def add_left(self, node: 'BinaryTreeNode', force=False):
+        """
+        Add a left child to the node.
+        :param node: BinaryTreeNode
+        :param force: bool - if True, allows overwriting existing child
+        :return:
+        """
         if node == self:
             node = BinaryTreeNode(self.value)
         if not force:
@@ -20,7 +30,14 @@ class BinaryTreeNode:
         if node not in self.children:
             self.children.append(node)
 
-    def add_right(self, node, force=False):
+    def add_right(self, node: 'BinaryTreeNode', force=False):
+        """
+        Add a right child to the node.
+
+        :param node: BinaryTreeNode
+        :param force: bool - if True, allows overwriting existing child
+        :return:
+        """
         if node == self:
             node = BinaryTreeNode(self.value)
         if not force:

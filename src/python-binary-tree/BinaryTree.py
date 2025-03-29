@@ -3,6 +3,10 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 class BinaryTree:
+    """
+    A class representing a binary tree.
+    It supports insertion, deletion, and traversal operations.
+    """
     def __init__(self):
         self.root_node: BinaryTreeNode = None
         self.size = 0
