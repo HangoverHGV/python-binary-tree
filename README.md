@@ -7,8 +7,8 @@ pip install python-binary-tree
 ```
 ## Usage
 ```python
-from binary_tree.BinaryTree import BinaryTree
-from binary_tree.BinaryTreeNode import BinaryTreeNode
+from binary_tree import BinaryTree
+from binary_tree import BinaryTreeNode
 # Create a binary tree and add nodes
 bt = BinaryTree()
 # Create nodes with values

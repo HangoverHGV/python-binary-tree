@@ -8,12 +8,14 @@ long_description = long_description.replace("![exampleplot.png](exampleplot.png)
 
 setup(
     name="python-binary-tree",
-    version="1.0.0",
+    version="1.0.2",
     author="HangoverHGV",
+    url="https://github.com/HangoverHGV/python-binary-tree",
     description="Binary tree implementation for Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    packages=find_packages(),
+    packages=find_packages(where='src'),
+    package_dir={'': 'src'},
     install_requires=['networkx', 'matplotlib'],
 )
 

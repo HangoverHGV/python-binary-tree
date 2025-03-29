@@ -1,4 +1,4 @@
-from BinaryTreeNode import BinaryTreeNode
+from .BinaryTreeNode import BinaryTreeNode
 import networkx as nx
 import matplotlib.pyplot as plt
 
