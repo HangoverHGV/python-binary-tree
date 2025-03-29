@@ -1,5 +1,3 @@
-
-
 class BinaryTreeNode:
     def __init__(self, value, level=0):
         self.value = value
@@ -11,6 +9,8 @@ class BinaryTreeNode:
         self.children = []
 
     def add_left(self, node, force=False):
+        if node == self:
+            node = BinaryTreeNode(self.value)
         if not force:
             if self.left is not None:
                 raise ValueError("Left child already exists")
@@ -21,6 +21,8 @@ class BinaryTreeNode:
             self.children.append(node)
 
     def add_right(self, node, force=False):
+        if node == self:
+            node = BinaryTreeNode(self.value)
         if not force:
             if self.right is not None:
                 raise ValueError("Right child already exists")

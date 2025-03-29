@@ -16,6 +16,7 @@ if __name__ == '__main__':
 
     node1.add_right(node3)
     node2.add_right(node4)
+    node1.add_left(node1)
 
     bt.insert(root)
     bt.insert(node1)
