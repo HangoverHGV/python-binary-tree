@@ -22,7 +22,7 @@ if __name__ == '__main__':
     bt.insert(root)
     bt.insert(node1)
     bt.insert(node2)
-
+    print(bt.search(5))
     bt.draw()
 
 

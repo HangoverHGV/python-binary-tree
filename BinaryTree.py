@@ -146,6 +146,25 @@ class BinaryTree:
 
         return bfs_order
 
+    def search(self, value):
+        """
+        Search for a node with the given value in the binary tree.
+        :param value: The value to search for.
+        :return: The node if found, otherwise None.
+        """
+
+        def _search(node, value):
+            if node is None:
+                return None
+            if node.value == value:
+                return node
+            left_result = _search(node.left, value)
+            if left_result is not None:
+                return left_result
+            return _search(node.right, value)
+
+        return _search(self.root_node, value)
+
     def _pretty_print(self):
         if not self.root_node:
             return "<empty tree>"
