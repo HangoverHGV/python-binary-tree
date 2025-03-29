@@ -98,7 +98,53 @@ class BinaryTree:
 
         return _in_order_dfs(self.root_node)
 
+    def pre_order_dfs(self):
+        """
+        Perform a pre-order depth-first traversal of the binary tree.
+        :return: A list of nodes in pre-order.
+        """
 
+        def _pre_order_dfs(node):
+            if node is None:
+                return []
+            return [node] + _pre_order_dfs(node.left) + _pre_order_dfs(node.right)
+
+        return _pre_order_dfs(self.root_node)
+
+    def post_order_dfs(self):
+        """
+        Perform a post-order depth-first traversal of the binary tree.
+        :return: A list of nodes in post-order.
+        """
+
+        def _post_order_dfs(node):
+            if node is None:
+                return []
+            return _post_order_dfs(node.left) + _post_order_dfs(node.right) + [node]
+
+        return _post_order_dfs(self.root_node)
+
+    def breadth_first_search(self):
+        """
+        Perform a breadth-first traversal of the binary tree.
+        :return: A list of nodes in breadth-first order.
+        """
+        if not self.root_node:
+            return []
+
+        queue = [self.root_node]
+        bfs_order = []
+
+        while queue:
+            current_node = queue.pop(0)
+            bfs_order.append(current_node)
+
+            if current_node.left:
+                queue.append(current_node.left)
+            if current_node.right:
+                queue.append(current_node.right)
+
+        return bfs_order
 
     def _pretty_print(self):
         if not self.root_node:

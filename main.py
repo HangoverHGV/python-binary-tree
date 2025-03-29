@@ -10,20 +10,19 @@ if __name__ == '__main__':
     node2 = BinaryTreeNode(2)
     node3 = BinaryTreeNode(3)
     node4 = BinaryTreeNode(4)
+    node5 = BinaryTreeNode(5)
 
     root.add_left(node1)
     root.add_right(node2)
 
     node1.add_right(node3)
     node2.add_right(node4)
-    node1.add_left(node1)
+    node1.add_left(node5)
 
     bt.insert(root)
     bt.insert(node1)
     bt.insert(node2)
 
-    print(bt)
-    print(bt.in_order_dfs())
     bt.draw()
 
 
